@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>American Curriculum | ILM Academy | Education Excellence</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="ilm logo.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="ilm logo.jpg">
+    <link rel="apple-touch-icon" href="ilm logo.jpg">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="ILM Academy is a private school in Nairobi, Kenya offering U.S., UK-based, and IB curriculum. Nurturing academic excellence with spiritual values to develop the leaders of tomorrow.">
+    <meta name="keywords" content="ILM Academy, Nairobi school, international school Kenya, British curriculum, American curriculum, IB programme, private school Nairobi, Islamic school, education excellence">
+    <meta name="author" content="ILM Academy">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ilmacademy.net/">
+    <meta property="og:title" content="ILM Academy | Education Excellence | Nairobi, Kenya">
+    <meta property="og:description" content="ILM Academy offers U.S., UK-based, and IB curriculum in Nairobi, Kenya. Nurturing academic excellence with spiritual values to develop the leaders of tomorrow.">
+    <meta property="og:image" content="https://www.ilmacademy.net/ilm logo.jpg">
+    <meta property="og:site_name" content="ILM Academy">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.ilmacademy.net/">
+    <meta name="twitter:title" content="ILM Academy | Education Excellence | Nairobi, Kenya">
+    <meta name="twitter:description" content="ILM Academy offers U.S., UK-based, and IB curriculum in Nairobi, Kenya. Nurturing academic excellence with spiritual values.">
+    <meta name="twitter:image" content="https://www.ilmacademy.net/ilm logo.jpg">
+    <meta name="twitter:site" content="@ILMAcademy_Nrb">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .animate-slide-left {
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+        
+        .animate-slide-right {
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+        
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+        
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-500 {
+            animation-delay: 0.5s;
+        }
+        
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.03);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #5cbbf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .gradient-text-american {
+            background: linear-gradient(90deg, #3b82f6, #ef4444, #fbbf24);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .program-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+        }
+        
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-radius: 0.5rem;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 50;
+            margin-top: 0.5rem;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-item {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #111827;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .dropdown-item:hover {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left-color: #3b82f6;
+            color: #2563eb;
+        }
+        
+        .dropdown-item:first-child {
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+        }
+        
+        .dropdown-item:last-child {
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+        }
+        
+        .feature-icon {
+            background: linear-gradient(135deg, #3b82f6);
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 1.5rem;
+        }
+        
+        /* .american-flag-bg {
+            background: linear-gradient(135deg, 
+                #3b82f6 0%, #3b82f6 33%, 
+                #ef4444 33%, #ef4444 66%, 
+                #ffffff 66%, #ffffff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+        
+        .american-stars {
+            background-image: radial-gradient(white 15%, transparent 16%),
+                              radial-gradient(white 15%, transparent 16%);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        } */
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center animate-slide-left">
+                    <a href="index.html" class="flex items-center">
+                        <img src="ilm logo.jpg" alt="ILM Academy Logo" class="h-20 mr-2">
+                        <span class="text-xl font-bold text-gray-900">ILM Academy</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
+                        <a href="about.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">About</a>
+                        <div class="dropdown">
+                            <a href="programs.html" class="text-blue-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300 flex items-center">
+                                Programs
+                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="programs.html" class="dropdown-item">All Programs</a>
+                                <a href="britishsystem.html" class="dropdown-item">British Curriculum</a>
+                                <a href="american-curriculum.html" class="dropdown-item">American Curriculum</a>
+                                <a href="ib-programme.html" class="dropdown-item">IB Programme</a>
+                            </div>
+                        </div>
+                        <a href="facilities.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Facilities</a>
+                        <a href="admissions.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Admissions</a>
+                        <a href="contact.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
+                        <a href="privacy.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Privacy Policy</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-blue-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">About</a>
+                <a href="programs.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Programs</a>
+                <a href="britishsystem.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50 pl-6">British Curriculum</a>
+                <a href="american-curriculum.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50 pl-6">American Curriculum</a>
+                <a href="ib-programme.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50 pl-6">IB Programme</a>
+                <a href="facilities.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Facilities</a>
+                <a href="admissions.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Admissions</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Contact</a>
+                <a href="privacy.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Privacy Policy</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden">
+        <div class="parallax relative py-32 flex items-center justify-center h-[600px]">
+            <!-- Background Image -->
+            <img src="NEWPROG.jpg" alt="American Curriculum Background"
+                class="absolute inset-0 w-full h-full object-cover z-0">
+    
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black opacity-40 z-10"></div>
+    
+            <!-- Content -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
+                    <span class="text-blue-600">American Curriculum</span>
+                </h1>
+                <p class="text-xl text-gray-200 mb-8 max-w-3xl mx-auto animate-fade-in delay-100">
+                    A rich and rigorous academic program renowned globally for its flexibility, breadth, and focus on developing well-rounded individuals with strong critical thinking and problem-solving skills
+                </p>
+                <div class="animate-fade-in delay-200">
+                    <a href="#structure" class="inline-flex items-center text-white hover:text-gray-200 transition duration-300">
+                        Explore Curriculum Structure
+                        <i class="fas fa-chevron-down ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- American Curriculum Overview -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">The <span class="text-blue-600">American Curriculum</span> at ILM Academy</h2>
+                <div class="w-24 h-1 bg-red-500 mx-auto mb-6 animate-fade-in delay-100"></div>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto animate-fade-in delay-200">
+                    ILM Academy offers a rich and rigorous American Academic curriculum, designed to cater to students of all ages and learning abilities. This curriculum is renowned globally for its flexibility, breadth, and focus on developing well-rounded individuals with strong critical thinking and problem-solving skills.
+                </p>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto mt-6 animate-fade-in delay-300">
+                    Our approach integrates the core principles and standards of the American education system, ensuring a comprehensive and engaging learning experience that prepares students for success in universities worldwide.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-b from-blue-50 to-white p-8 rounded-xl animate-fade-in program-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4 text-center">Holistic Development</h3>
+                    <p class="text-gray-600 text-center">The curriculum emphasizes a balanced approach to education, fostering intellectual, social, emotional, and physical development. It encourages students to explore a wide range of subjects and extracurricular activities.</p>
+                </div>
+                
+                <div class="bg-gradient-to-b from-blue-50 to-white p-8 rounded-xl animate-fade-in delay-100 program-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4 text-center">Student-Centered Learning</h3>
+                    <p class="text-gray-600 text-center">Our educational philosophy places the student at the center of the learning process. We encourage active participation, inquiry-based learning, and personalized instruction to meet individual needs and learning styles.</p>
+                </div>
+                
+                <div class="bg-gradient-to-b from-blue-50 to-white p-8 rounded-xl animate-fade-in delay-200 program-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4 text-center">Critical Thinking & Creativity</h3>
+                    <p class="text-gray-600 text-center">The curriculum is designed to nurture creativity and critical thinking from an early age. Students are challenged to analyze information, solve complex problems, and express their ideas innovatively.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">Key Features of the <span class="text-blue-600">American Curriculum</span></h2>
+                <div class="w-24 h-1 bg-red-500 mx-auto mb-6 animate-fade-in delay-100"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in delay-200">The American Curriculum at ILM Academy is characterized by several distinctive features that promote academic excellence and personal growth</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl animate-fade-in program-card">
+                    <div class="flex items-start mb-4">
+                        <div class="h-12 w-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xl mr-4 flex-shrink-0">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Broad Subject Exposure</h3>
+                            <p class="text-gray-600">Students are exposed to a diverse array of subjects across humanities, sciences, arts, and physical education, allowing them to discover their interests and strengths. This broad exposure helps in developing versatile learners.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl animate-fade-in delay-100 program-card">
+                    <div class="flex items-start mb-4">
+                        <div class="h-12 w-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xl mr-4 flex-shrink-0">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Continuous Assessment</h3>
+                            <p class="text-gray-600">Learning progress is continuously monitored through a variety of assessment methods, including projects, presentations, quizzes, and examinations. This approach provides regular feedback and supports ongoing improvement.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl animate-fade-in delay-200 program-card">
+                    <div class="flex items-start mb-4">
+                        <div class="h-12 w-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xl mr-4 flex-shrink-0">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Preparation for Higher Education</h3>
+                            <p class="text-gray-600">The American Curriculum rigorously prepares students for higher education, both locally and internationally. Our program aligns with recognized standards such as Common Core framework, equipping students for success in universities worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl animate-fade-in delay-300 program-card">
+                    <div class="flex items-start mb-4">
+                        <div class="h-12 w-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xl mr-4 flex-shrink-0">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Flexible Learning Pathways</h3>
+                            <p class="text-gray-600">Students have the flexibility to choose courses that align with their interests and career aspirations, creating personalized educational pathways that foster engagement and motivation.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl animate-fade-in delay-400 program-card">
+                    <div class="flex items-start mb-4">
+                        <div class="h-12 w-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xl mr-4 flex-shrink-0">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Collaborative Learning</h3>
+                            <p class="text-gray-600">Emphasis on group projects, discussions, and collaborative activities develops teamwork, communication skills, and the ability to work effectively with diverse groups of peers.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl animate-fade-in delay-500 program-card">
+                    <div class="flex items-start mb-4">
+                        <div class="h-12 w-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xl mr-4 flex-shrink-0">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Standards-Based Excellence</h3>
+                            <p class="text-gray-600">Our curriculum follows rigorous standards that ensure consistent, high-quality education while allowing for innovation and adaptation to meet the needs of individual learners.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Structure Section -->
+    <section id="structure" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">Curriculum <span class="text-blue-600">Structure and Progression</span></h2>
+                <div class="w-24 h-1 bg-red-500 mx-auto mb-6 animate-fade-in delay-100"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in delay-200">The American Curriculum typically follows a grade-level structure, progressing from elementary to middle and high school. At ILM Academy, our curriculum is structured to provide a seamless educational journey.</p>
+            </div>
+            
+            <!-- Elementary School -->
+            <div class="program-card bg-gradient-to-r from-blue-50 to-white rounded-xl overflow-hidden mb-12 animate-fade-in">
+                <div class="md:flex">
+                    <div class="md:w-2/5 relative">
+                        <img src="NEWBABY.jpg" alt="Elementary School" class="w-full h-full object-cover min-h-[300px]">
+                        <div class="image-overlay"></div>
+                        <div class="absolute bottom-0 left-0 p-8 text-white z-10">
+                            <h3 class="text-3xl font-bold mb-2">Elementary School</h3>
+                            <p class="text-blue-200 font-semibold">Grades K-5 | Ages 5-11</p>
+                        </div>
+                    </div>
+                    <div class="md:w-3/5 p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="h-10 w-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-4">
+                                <i class="fas fa-child"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold text-gray-900">Building Strong Foundations</h4>
+                        </div>
+                        <p class="text-gray-600 mb-6">Focuses on foundational skills in reading, writing, mathematics, science, and social studies, alongside creative arts and physical education. Emphasis is placed on developing a love for learning and strong academic habits.</p>
+                        
+                        <div class="mb-6">
+                            <h5 class="font-semibold text-gray-800 mb-3">Core Focus Areas:</h5>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="flex items-center">
+                                    <div class="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-check text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700">Literacy & Language Arts</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-check text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700">Mathematics Foundations</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-check text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700">Science Exploration</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-check text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700">Social Studies</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-check text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700">Arts & Music</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-check text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700">Physical Education</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <p class="text-gray-700"><strong>Educational Approach:</strong> Hands-on, experiential learning with emphasis on developing social skills, creativity, and a positive attitude toward learning.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Middle School -->
+            <div class="program-card bg-gradient-to-r from-red-50 to-white rounded-xl overflow-hidden mb-12 animate-fade-in delay-100">
+                <div class="md:flex flex-row-reverse">
+                    <div class="md:w-2/5 relative">
+                        <img src="NEWMID.jpg" alt="Middle School" class="w-full h-full object-cover min-h-[300px]">
+                        <div class="image-overlay"></div>
+                        <div class="absolute bottom-0 left-0 p-8 text-white z-10">
+                            <h3 class="text-3xl font-bold mb-2">Middle School</h3>
+                            <p class="text-red-200 font-semibold">Grades 6-8 | Ages 11-14</p>
+                        </div>
+                    </div>
+                    <div class="md:w-3/5 p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="h-10 w-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center mr-4">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold text-gray-900">Developing Independent Learners</h4>
+                        </div>
+                        <p class="text-gray-600 mb-6">Builds upon elementary foundations, introducing more specialized subjects and encouraging independent learning. Students begin to explore various disciplines, preparing them for more advanced studies.</p>
+                        
+                        <div class="mb-6">
+                            <h5 class="font-semibold text-gray-800 mb-3">Program Highlights:</h5>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="flex items-center">
+                                    <div class="h-6 w-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-check text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700">Subject Specialization</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-6 w-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-check text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700">Critical Thinking Skills</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-6 w-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-check text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700">Research Projects</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-6 w-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-check text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700">Elective Courses</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-6 w-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-check text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700">Extracurricular Exploration</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-6 w-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-check text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700">High School Preparation</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <p class="text-gray-700"><strong>Core Curriculum:</strong> English Language Arts, Mathematics (Pre-Algebra, Algebra), Science (Life, Physical, Earth), Social Studies (World History, Geography), Foreign Language, Arts, Physical Education, and Technology.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- High School -->
+            <div class="program-card bg-gradient-to-r from-blue-50 to-white rounded-xl overflow-hidden mb-12 animate-fade-in delay-200">
+                <div class="md:flex">
+                    <div class="md:w-2/5 relative">
+                        <img src="NEWHIGH.jpg" alt="High School" class="w-full h-full object-cover min-h-[300px]">
+                        <div class="image-overlay"></div>
+                        <div class="absolute bottom-0 left-0 p-8 text-white z-10">
+                            <h3 class="text-3xl font-bold mb-2">High School</h3>
+                            <p class="text-blue-200 font-semibold">Grades 9-12 | Ages 14-18</p>
+                        </div>
+                    </div>
+                    <div class="md:w-3/5 p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="h-10 w-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-4">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold text-gray-900">College and Career Preparation</h4>
+                        </div>
+                        <p class="text-gray-600 mb-6">Offers a wide selection of courses, allowing students to pursue their academic interests in depth. The high school program is designed to meet college entrance requirements and prepare students for their chosen career paths.</p>
+                        
+                        <div class="mb-6">
+                            <h5 class="font-semibold text-gray-800 mb-3">Key Components:</h5>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="flex items-center">
+                                    <div class="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-check text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700">College Preparatory Curriculum</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-check text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700">Elective Specializations</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-check text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700">Career Pathway Options</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-check text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700">SAT/ACT Preparation</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-check text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700">College Application Guidance</span>
+                                </div>
+                                <!-- <div class="flex items-center">
+                                    <div class="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-check text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700">College Application Guidance</span>
+                                </div> -->
+                            </div>
+                        </div>
+                        
+                        <!-- <div class="bg-gradient-to-r from-blue-50 to-red-50 p-4 rounded-lg">
+                            <h6 class="font-semibold text-gray-800 mb-2">Advanced Placement (AP) Advantage:</h6>
+                            <p class="text-gray-700 text-sm">AP courses allow students to pursue college-level studies while still in high school. Successful AP exam scores can earn students college credit and advanced placement at universities worldwide, providing a significant advantage in the college admissions process.</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration with Values Section -->
+    <!-- <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">Integration with <span class="text-blue-600">ILM Academy Values</span></h2>
+                <div class="w-24 h-1 bg-red-500 mx-auto mb-6 animate-fade-in delay-100"></div>
+            </div>
+            
+            <div class="bg-white rounded-xl p-8 program-card animate-fade-in">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-2/5 mb-8 md:mb-0">
+                        <div class="relative h-64 w-64 mx-auto">
+                            <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-600 rounded-full flex items-center justify-center">
+                                <i class="fas fa-star text-white text-8xl"></i>
+                            </div>
+                            <div class="absolute -inset-4 bg-gradient-to-br from-blue-200 to-blue-200 rounded-full blur-lg opacity-50"></div>
+                        </div>
+                    </div>
+                    <div class="md:w-3/5 md:pl-12">
+                        <p class="text-xl text-gray-600 mb-6">
+                            At ILM Academy, the American Curriculum is delivered within a framework that upholds our core values of Community, Character, Culture, and Excellence. We believe in fostering an environment where students not only achieve academic success but also develop into compassionate, responsible, and ethical global citizens.
+                        </p>
+                        <p class="text-xl text-gray-600">
+                            Our curriculum is structured to connect students to the Quran and Sunnah from the earliest grades, challenging them to think critically and apply Islamic principles in their daily lives. This integration ensures that students develop strong moral character alongside academic excellence.
+                        </p>
+                        
+                        <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="flex flex-col items-center p-4 bg-blue-50 rounded-lg">
+                                <div class="h-10 w-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mb-2">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <span class="font-semibold text-gray-800 text-center">Community</span>
+                            </div>
+                            <div class="flex flex-col items-center p-4 bg-blue-50 rounded-lg">
+                                <div class="h-10 w-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mb-2">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <span class="font-semibold text-gray-800 text-center">Character</span>
+                            </div>
+                            <div class="flex flex-col items-center p-4 bg-blue-50 rounded-lg">
+                                <div class="h-10 w-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mb-2">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <span class="font-semibold text-gray-800 text-center">Culture</span>
+                            </div>
+                            <div class="flex flex-col items-center p-4 bg-blue-50 rounded-lg">
+                                <div class="h-10 w-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mb-2">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <span class="font-semibold text-gray-800 text-center">Excellence</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Benefits Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">American Curriculum <span class="text-blue-600">Benefits</span></h2>
+                <div class="w-24 h-1 bg-red-500 mx-auto mb-6 animate-fade-in delay-100"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in delay-200">Why choose the American education system at ILM Academy?</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center animate-fade-in">
+                    <div class="h-20 w-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Global University Access</h3>
+                    <p class="text-gray-600">American high school diplomas with AP courses are recognized by universities worldwide, including top institutions in the US, Canada, Europe, and beyond.</p>
+                </div>
+                
+                <div class="text-center animate-fade-in delay-100">
+                    <div class="h-20 w-20 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Critical Thinking Skills</h3>
+                    <p class="text-gray-600">Emphasis on analysis, problem-solving, and creative thinking prepares students for the complex challenges of higher education and modern careers.</p>
+                </div>
+                
+                <div class="text-center animate-fade-in delay-200">
+                    <div class="h-20 w-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Flexibility & Choice</h3>
+                    <p class="text-gray-600">Students can tailor their education through elective courses and AP options, creating personalized pathways that match their interests and goals.</p>
+                </div>
+                
+                <div class="text-center animate-fade-in delay-300">
+                    <div class="h-20 w-20 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Holistic Development</h3>
+                    <p class="text-gray-600">Balanced focus on academics, extracurriculars, and character development creates well-rounded individuals prepared for all aspects of life.</p>
+                </div>
+            </div>
+            
+            <!-- <div class="mt-12 text-center animate-fade-in">
+                <div class="bg-gradient-to-r from-blue-50 to-red-50 p-6 rounded-xl">
+                    <h4 class="text-2xl font-bold text-gray-900 mb-4">Advanced Placement (AP) Program</h4>
+                    <p class="text-gray-700 max-w-3xl mx-auto">
+                        Our AP program allows motivated students to take college-level courses and exams in high school. Earning qualifying scores on AP exams can result in college credit, advanced placement, or both at most colleges and universities in the United States and Canada, as well as at many international institutions.
+                    </p>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-blue-600 text-white american-stars">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-4xl font-bold mb-6 animate-fade-in">Begin Your <span class="american-flag-bg">American Education Journey</span> Today</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto animate-fade-in delay-100">Discover how the American Curriculum at ILM Academy can provide your child with a flexible, comprehensive education that develops critical thinkers and prepares them for success in universities worldwide.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in delay-200">
+                <a href="contact.html" class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold text-lg transition duration-300 hover-scale">Schedule a Visit</a>
+                <a href="admissions.html" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-semibold text-lg transition duration-300 hover-scale">View Admissions</a>
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-black opacity-10"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gray-900 p-1 rounded mr-2">
+                            <img src="ilm logo.jpg" alt="ILM Academy Logo" class="h-20">
+                        </div>
+                        <span class="text-xl font-bold">ILM Academy</span>
+                    </div>
+                    <p class="text-gray-400">We provide an environment where our children develop into empathetic, self-directed, critical thinkers who don't give up when faced with challenges.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="programs.html" class="text-gray-400 hover:text-white transition duration-300">Programs</a></li>
+                        <li><a href="facilities.html" class="text-gray-400 hover:text-white transition duration-300">Facilities</a></li>
+                        <li><a href="admissions.html" class="text-gray-400 hover:text-white transition duration-300">Admissions</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Programs</h3>
+                    <ul class="space-y-2">
+                        <li><a href="britishsystem.html" class="text-gray-400 hover:text-white transition duration-300">British System</a></li>
+                        <li><a href="american-curriculum.html" class="text-gray-400 hover:text-white transition duration-300">American Curriculum</a></li>
+                        <li><a href="ib-programme.html" class="text-gray-400 hover:text-white transition duration-300">IB Programme</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for updates and announcements.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
+                        <button class="bg-blue-600 px-4 py-2 rounded-r-lg hover:bg-blue-700 transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <br>
+                    <p><a href="privacy.html" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2023 ILM Academy. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="https://www.facebook.com/profile.php?id=61553200850864&__tn__=%3C" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://x.com/ILMAcademy_Nrb" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/ilma.cademy/" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- WhatsApp Floating Button -->
+    <a id="whatsapp-button" href="https://wa.me/254707796867" target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Back to top button and WhatsApp button scroll behavior
+        const backToTopButton = document.getElementById('back-to-top');
+        const whatsappButton = document.getElementById('whatsapp-button');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+                // Move WhatsApp button above the Back to Top button
+                whatsappButton.style.bottom = '5rem'; // 80px (5rem = bottom-20)
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                // Reset WhatsApp button to original position
+                whatsappButton.style.bottom = '2rem'; // 32px (2rem = bottom-8)
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Animation on scroll
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.animate-fade-in, .animate-slide-left, .animate-slide-right');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translate(0)';
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>

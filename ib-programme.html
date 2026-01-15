@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IB Programme | ILM Academy | IB Diploma Programme Candidate School</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="ilm logo.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="ilm logo.jpg">
+    <link rel="apple-touch-icon" href="ilm logo.jpg">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="ILM Academy is a Candidate School for the IB Diploma Programme. Learn about our International Baccalaureate program for Grades 11 & 12 in Nairobi, Kenya.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="IB Programme | ILM Academy">
+    <meta property="og:description" content="ILM Academy is pursuing authorization as an IB World School, offering the IB Diploma Programme for Grades 11 & 12.">
+    <meta property="og:image" content="https://www.ilmacademy.net/ilm logo.jpg">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .animate-slide-left {
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+        
+        .animate-slide-right {
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+        
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+        
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-500 {
+            animation-delay: 0.5s;
+        }
+        
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.03);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #5cbbf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .gradient-text-orange {
+            background: linear-gradient(90deg, #f97316, #fb923c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .program-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+        }
+        
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-radius: 0.5rem;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 50;
+            margin-top: 0.5rem;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-item {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #111827;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .dropdown-item:hover {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left-color: #3b82f6;
+            color: #2563eb;
+        }
+        
+        .dropdown-item:first-child {
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+        }
+        
+        .dropdown-item:last-child {
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+        }
+        
+        .learner-profile-icon {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        
+        .ib-blue-bg {
+            background-color: #005ca6;
+        }
+        
+        .ib-orange-bg {
+            background-color: #f36f21;
+        }
+        
+        .ib-green-bg {
+            background-color: #4caf50;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center animate-slide-left">
+                    <a href="index.html" class="flex items-center">
+                        <img src="ilm logo.jpg" alt="ILM Academy Logo" class="h-20 mr-2">
+                        <span class="text-xl font-bold text-gray-900">ILM Academy</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
+                        <a href="about.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">About</a>
+                        <div class="dropdown">
+                            <a href="programs.html" class="text-blue-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300 flex items-center">
+                                Programs
+                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="programs.html" class="dropdown-item">All Programs</a>
+                                <a href="britishsystem.html" class="dropdown-item">British Curriculum</a>
+                                <a href="american-curriculum.html" class="dropdown-item">American Curriculum</a>
+                                <a href="ib-programme.html" class="dropdown-item">IB Programme</a>
+                            </div>
+                        </div>
+                        <a href="facilities.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Facilities</a>
+                        <a href="admissions.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Admissions</a>
+                        <a href="contact.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
+                        <a href="privacy.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Privacy Policy</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-blue-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">About</a>
+                <a href="programs.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Programs</a>
+                <a href="britishsystem.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50 pl-6">British Curriculum</a>
+                <a href="american-curriculum.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50 pl-6">American Curriculum</a>
+                <a href="ib-programme.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50 pl-6">IB Programme</a>
+                <a href="facilities.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Facilities</a>
+                <a href="admissions.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Admissions</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Contact</a>
+                <a href="privacy.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Privacy Policy</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden">
+        <div class="parallax relative py-16 md:py-32 flex items-center justify-center min-h-[300px] md:min-h-[700px] bg-black">
+            <!-- Background Video with Subtitles -->
+            <video id="hero-video" class="absolute inset-0 w-full h-full z-5 md:object-cover" style="object-fit: contain; object-position: center;" autoplay="true" loop playsinline crossorigin="anonymous">
+            <source src="IBVID.mp4" type="video/mp4">
+            <!-- <track kind="subtitles" src="IBVID.vtt" srclang="en" label="English" default> -->
+            Your browser does not support the video tag.
+            </video>
+    
+            <!-- Mute/Unmute Button -->
+            <button id="mute-toggle" class="absolute top-4 right-4 md:top-8 md:right-8 z-30 bg-white bg-opacity-80 hover:bg-opacity-100 text-gray-900 p-2 md:p-3 rounded-full shadow-lg transition-all duration-300">
+                <i id="mute-icon" class="fas fa-volume-up text-lg md:text-xl"></i>
+            </button>
+    
+            <!-- Overlay (behind video so subtitles are visible) -->
+            <div class="absolute inset-0 bg-black opacity-30 md:opacity-40 z-0"></div>
+    
+            <!-- Content -->
+            <!-- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
+                    International Baccalaureate <span class="gradient-text">(IB) Programme</span>
+                </h1>
+                <p class="text-xl text-gray-200 mb-8 max-w-3xl mx-auto animate-fade-in delay-100">
+                    ILM Academy is a Candidate School* for the IB DP Programme (Grades 11 & 12).  This school is pursuing 
+                    authorization as an IB World School.
+                </p>
+                <div class="animate-fade-in delay-200">
+                    <a href="#programmes" class="inline-flex items-center text-white hover:text-gray-200 transition duration-300">
+                        Explore IB Programmes
+                        <i class="fas fa-chevron-down ml-2"></i>
+                    </a>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- IB Overview -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <!-- IB Candidate Logo -->
+                <div class="flex justify-center mb-8 animate-fade-in">
+                    <img src="IB candidate.jpg" alt="IB Candidate School" class="h-32 md:h-40 object-contain">
+                </div>
+                
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">The <span class="gradient-text">International Baccalaureate</span> at ILM Academy</h2>
+                <div class="w-24 h-1 bg-orange-500 mx-auto mb-6 animate-fade-in delay-100"></div>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto animate-fade-in delay-200">
+                    At ILM Academy, we are proud to be International Baccalaureate (IB) candidate school, a globally recognized educational framework that fosters critical thinking, international-mindedness, and a holistic approach to learning. The IB programmes are designed to develop inquiring, knowledgeable, and caring young people who are motivated to succeed and contribute to a better, more peaceful world through intercultural understanding and respect.
+                </p>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto mt-6 animate-fade-in delay-300">
+                    Our commitment to the IB philosophy aligns seamlessly with ILM Academy's vision of nurturing students with keen minds, exemplary character, and the ability to innovate, lead, and mentor. The IB curriculum, utilized by over 5,500 schools worldwide, provides a coherent educational experience that emphasizes intellectual, personal, emotional, and social growth.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-blue-50 p-8 rounded-xl animate-fade-in">
+                    <div class="h-16 w-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Global Recognition</h3>
+                    <p class="text-gray-600">IB qualifications are recognized and highly respected by leading universities worldwide, providing students with exceptional international opportunities.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-8 rounded-xl animate-fade-in delay-100">
+                    <div class="h-16 w-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Holistic Development</h3>
+                    <p class="text-gray-600">The IB emphasizes intellectual, personal, emotional, and social growth, developing well-rounded individuals prepared for university and life beyond.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-8 rounded-xl animate-fade-in delay-200">
+                    <div class="h-16 w-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">International-Mindedness</h3>
+                    <p class="text-gray-600">IB students develop intercultural understanding and respect, becoming global citizens who contribute to a more peaceful and sustainable world.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IB Programmes Section -->
+    <!-- <section id="programmes" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">IB <span class="gradient-text">Programmes Offered</span></h2>
+                <div class="w-24 h-1 bg-orange-500 mx-auto mb-6 animate-fade-in delay-100"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in delay-200">ILM Academy offers the three core International Baccalaureate programmes, providing a continuous and progressive learning journey from early childhood through to pre-university</p>
+            </div>
+            
+            
+            <div class="program-card bg-white rounded-xl overflow-hidden mb-12 animate-fade-in">
+                <div class="md:flex">
+                    <div class="md:w-1/2 relative">
+                        <img src="NEWBABY.jpg" alt="Primary Years Programme" class="w-full h-full object-cover">
+                        <div class="image-overlay"></div>
+                        <div class="absolute bottom-0 left-0 p-8 text-white z-10">
+                            <h3 class="text-3xl font-bold mb-2">Primary Years Programme (PYP)</h3>
+                            <p class="text-orange-200">Ages 3 to 11 | K1-K3 to Grades 1-5</p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="h-10 w-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-4">
+                                <i class="fas fa-child"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold text-gray-900">Developing the Whole Child</h4>
+                        </div>
+                        <p class="text-gray-600 mb-6">The IB Primary Years Programme (PYP) focuses on the development of the whole child, both within the classroom and in the wider world. It cultivates concepts, knowledge, skills, attitudes, and actions through six trans-disciplinary themes across six subject areas:</p>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="flex items-center">
+                                <div class="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-2">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">Language</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-2">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">Mathematics</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-2">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">Social Studies</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-2">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">Arts</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-2">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">Sciences</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-2">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">Personal, Social & Physical Education</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4"><strong>Approach:</strong> This inquiry-based pedagogy encourages a holistic perspective of the world, fostering curiosity and a love for learning from an early age.</p>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="program-card bg-white rounded-xl overflow-hidden mb-12 animate-fade-in delay-100">
+                <div class="md:flex flex-row-reverse">
+                    <div class="md:w-1/2 relative">
+                        <img src="NEWMID.jpg" alt="Middle Years Programme" class="w-full h-full object-cover">
+                        <div class="image-overlay"></div>
+                        <div class="absolute bottom-0 left-0 p-8 text-white z-10">
+                            <h3 class="text-3xl font-bold mb-2">Middle Years Programme (MYP)</h3>
+                            <p class="text-orange-200">Ages 11 to 16 | Grades 6-10</p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="h-10 w-10 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mr-4">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold text-gray-900">Building Critical Thinkers</h4>
+                        </div>
+                        <p class="text-gray-600 mb-6">The IB Middle Years Programme (MYP) provides a framework that encourages creative, critical, and reflective thinking. It emphasizes intellectual challenge and prompts students to connect their studies in traditional subjects with real-world contexts.</p>
+                        
+                        <div class="mb-6">
+                            <h5 class="font-semibold text-gray-800 mb-2">MYP Curriculum explores eight subject groups:</h5>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="flex items-center">
+                                    <div class="h-5 w-5 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-circle text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700 text-sm">Language Acquisition</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-5 w-5 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-circle text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700 text-sm">Language & Literature</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-5 w-5 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-circle text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700 text-sm">Individuals & Societies</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-5 w-5 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-circle text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700 text-sm">Sciences</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-5 w-5 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-circle text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700 text-sm">Mathematics</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-5 w-5 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-circle text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700 text-sm">Arts</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-5 w-5 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-circle text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700 text-sm">Physical & Health Education</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="h-5 w-5 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mr-2">
+                                        <i class="fas fa-circle text-xs"></i>
+                                    </div>
+                                    <span class="text-gray-700 text-sm">Design</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4"><strong>Key Feature:</strong> Students undertake a personal project in MYP5, showcasing their ability to conduct independent work. The MYP builds upon the PYP foundation and prepares students for the academic rigour of the IB Diploma Programme.</p>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="program-card bg-white rounded-xl overflow-hidden mb-12 animate-fade-in delay-200">
+                <div class="md:flex">
+                    <div class="md:w-1/2 relative">
+                        <img src="NEWHIGH.jpg" alt="Diploma Programme" class="w-full h-full object-cover">
+                        <div class="image-overlay"></div>
+                        <div class="absolute bottom-0 left-0 p-8 text-white z-10">
+                            <h3 class="text-3xl font-bold mb-2">Diploma Programme (DP)</h3>
+                            <p class="text-orange-200">Ages 16 to 19 | Pre-University</p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="h-10 w-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-4">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold text-gray-900">University Preparation Excellence</h4>
+                        </div>
+                        <p class="text-gray-600 mb-6">The internationally acclaimed IB Diploma Programme (DP) is an academically challenging and balanced two-year programme culminating in final examinations, preparing students for success at leading universities worldwide and for life beyond. The programme is highly respected by higher education institutions globally.</p>
+                        
+                        <div class="mb-6">
+                            <h5 class="font-semibold text-gray-800 mb-2">DP Structure:</h5>
+                            <p class="text-gray-600 mb-3">IB DP students typically study three subjects at Higher Level (HL) and three subjects at Standard Level (SL).</p>
+                            
+                            <h5 class="font-semibold text-gray-800 mb-2 mt-4">Core Requirements:</h5>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <div class="h-6 w-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-2 mt-1 flex-shrink-0">
+                                        <i class="fas fa-file-alt text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <span class="font-medium text-gray-800">Extended Essay:</span>
+                                        <span class="text-gray-600"> A 4,000-word independent research essay.</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="h-6 w-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-2 mt-1 flex-shrink-0">
+                                        <i class="fas fa-lightbulb text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <span class="font-medium text-gray-800">Theory of Knowledge (TOK):</span>
+                                        <span class="text-gray-600"> A course that encourages students to reflect on the nature of knowledge and how we know what we claim to know.</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="h-6 w-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-2 mt-1 flex-shrink-0">
+                                        <i class="fas fa-hands-helping text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <span class="font-medium text-gray-800">Creativity, Activity, Service (CAS):</span>
+                                        <span class="text-gray-600"> A range of experiences and projects undertaken alongside academic studies, fostering personal and interpersonal development.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Learner Profile Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">The ILM Academy <span class="gradient-text">Learner Profile</span></h2>
+                <div class="w-24 h-1 bg-orange-500 mx-auto mb-6 animate-fade-in delay-100"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in delay-200">
+                    Inspired by the IB Learner Profile, ILM Academy celebrates attributes that describe our students as individuals and as responsible members of a global community.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl animate-fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="learner-profile-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Inquirers</h3>
+                    </div>
+                    <p class="text-gray-600">We nurture our curiosity, developing skills for inquiry and research.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl animate-fade-in delay-100">
+                    <div class="flex items-center mb-4">
+                        <div class="learner-profile-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Knowledgeable</h3>
+                    </div>
+                    <p class="text-gray-600">We develop and use conceptual understanding across a range of disciplines.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl animate-fade-in delay-200">
+                    <div class="flex items-center mb-4">
+                        <div class="learner-profile-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Thinkers</h3>
+                    </div>
+                    <p class="text-gray-600">We use critical and creative thinking skills to analyze complex problems.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl animate-fade-in delay-300">
+                    <div class="flex items-center mb-4">
+                        <div class="learner-profile-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Communicators</h3>
+                    </div>
+                    <p class="text-gray-600">We express ourselves confidently and creatively in more than one language.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl animate-fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="learner-profile-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Principled</h3>
+                    </div>
+                    <p class="text-gray-600">We act with integrity and honesty, with a strong sense of fairness and justice.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl animate-fade-in delay-100">
+                    <div class="flex items-center mb-4">
+                        <div class="learner-profile-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Open-minded</h3>
+                    </div>
+                    <p class="text-gray-600">We critically appreciate our own cultures and personal histories, as well as the values and traditions of others.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl animate-fade-in delay-200">
+                    <div class="flex items-center mb-4">
+                        <div class="learner-profile-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Caring</h3>
+                    </div>
+                    <p class="text-gray-600">We show empathy, compassion and respect towards the needs and feelings of others.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl animate-fade-in delay-300">
+                    <div class="flex items-center mb-4">
+                        <div class="learner-profile-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Risk-Takers</h3>
+                    </div>
+                    <p class="text-gray-600">We approach uncertainty with forethought and determination; we work independently and cooperatively.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl animate-fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="learner-profile-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Balanced</h3>
+                    </div>
+                    <p class="text-gray-600">We understand the importance of balancing different aspects of our lives—intellectual, physical, and emotional.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl animate-fade-in delay-100">
+                    <div class="flex items-center mb-4">
+                        <div class="learner-profile-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Reflective</h3>
+                    </div>
+                    <p class="text-gray-600">We thoughtfully consider the world and our own ideas and experience.</p>
+                </div>
+                
+                <!-- <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl animate-fade-in delay-200">
+                    <div class="flex items-center mb-4">
+                        <div class="learner-profile-icon">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Leaders</h3>
+                    </div>
+                    <p class="text-gray-600">We develop the ability to innovate, lead, and mentor others in our community.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl animate-fade-in delay-300">
+                    <div class="flex items-center mb-4">
+                        <div class="learner-profile-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Stewards</h3>
+                    </div>
+                    <p class="text-gray-600">We are responsible members of a global community, committed to making a positive impact on the world.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center animate-fade-in">
+                <p class="text-gray-700 text-lg italic max-w-3xl mx-auto">
+                    "These attributes underpin our educational approach, ensuring that ILM Academy graduates are well-rounded, compassionate, and prepared to make a positive impact on the world."
+                </p>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">IB Programme <span class="gradient-text">Benefits</span></h2>
+                <div class="w-24 h-1 bg-orange-500 mx-auto mb-6 animate-fade-in delay-100"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in delay-200">Why the International Baccalaureate is recognized as one of the world's leading educational programmes</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center animate-fade-in">
+                    <div class="h-20 w-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">University Success</h3>
+                    <p class="text-gray-600">IB Diploma graduates have higher university acceptance rates and are better prepared for rigorous university coursework.</p>
+                </div>
+                
+                <div class="text-center animate-fade-in delay-100">
+                    <div class="h-20 w-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Critical Thinking</h3>
+                    <p class="text-gray-600">IB students develop exceptional analytical and problem-solving skills through inquiry-based learning.</p>
+                </div>
+                
+                <div class="text-center animate-fade-in delay-200">
+                    <div class="h-20 w-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Global Citizenship</h3>
+                    <p class="text-gray-600">The IB develops internationally-minded students who appreciate diverse cultures and perspectives.</p>
+                </div>
+                
+                <div class="text-center animate-fade-in delay-300">
+                    <div class="h-20 w-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Holistic Development</h3>
+                    <p class="text-gray-600">Balancing academic rigor with creativity, activity, and service ensures well-rounded personal growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6 animate-fade-in">Begin Your <span class="gradient-text">IB Journey</span> at ILM Academy</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto animate-fade-in delay-100">Join our community of learners and discover how the International Baccalaureate Programme can prepare your child for global success and university excellence.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in delay-200">
+                <a href="contact.html" class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold text-lg transition duration-300 hover-scale">Schedule a Visit</a>
+                <a href="admissions.html" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-semibold text-lg transition duration-300 hover-scale">View Admissions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gray-900 p-1 rounded mr-2">
+                            <img src="ilm logo.jpg" alt="ILM Academy Logo" class="h-20">
+                        </div>
+                        <span class="text-xl font-bold">ILM Academy</span>
+                    </div>
+                    <p class="text-gray-400">We provide an environment where our children develop into empathetic, self-directed, critical thinkers who don't give up when faced with challenges.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="programs.html" class="text-gray-400 hover:text-white transition duration-300">Programs</a></li>
+                        <li><a href="facilities.html" class="text-gray-400 hover:text-white transition duration-300">Facilities</a></li>
+                        <li><a href="admissions.html" class="text-gray-400 hover:text-white transition duration-300">Admissions</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Programs</h3>
+                    <ul class="space-y-2">
+                        <li><a href="britishsystem.html" class="text-gray-400 hover:text-white transition duration-300">British System</a></li>
+                        <li><a href="american-curriculum.html" class="text-gray-400 hover:text-white transition duration-300">American Curriculum</a></li>
+                        <li><a href="ib-programme.html" class="text-gray-400 hover:text-white transition duration-300">IB Programme</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for updates and announcements.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
+                        <button class="bg-blue-600 px-4 py-2 rounded-r-lg hover:bg-blue-700 transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <br>
+                    <p><a href="privacy.html" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2023 ILM Academy. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="https://www.facebook.com/profile.php?id=61553200850864&__tn__=%3C" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://x.com/ILMAcademy_Nrb" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/ilma.cademy/" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- WhatsApp Floating Button -->
+    <a id="whatsapp-button" href="https://wa.me/254707796867" target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Back to top button and WhatsApp button scroll behavior
+        const backToTopButton = document.getElementById('back-to-top');
+        const whatsappButton = document.getElementById('whatsapp-button');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+                // Move WhatsApp button above the Back to Top button
+                whatsappButton.style.bottom = '5rem'; // 80px (5rem = bottom-20)
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                // Reset WhatsApp button to original position
+                whatsappButton.style.bottom = '2rem'; // 32px (2rem = bottom-8)
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Animation on scroll
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.animate-fade-in, .animate-slide-left, .animate-slide-right');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translate(0)';
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Video mute on scroll past hero section and mute button functionality
+        const heroVideo = document.getElementById('hero-video');
+        const heroSection = document.querySelector('section');
+        const muteToggle = document.getElementById('mute-toggle');
+        const muteIcon = document.getElementById('mute-icon');
+        let userMuted = false; // Track if user manually muted
+        
+        // Function to update button icon
+        function updateMuteIcon() {
+            if (heroVideo.muted) {
+                muteIcon.className = 'fas fa-volume-mute text-xl';
+            } else {
+                muteIcon.className = 'fas fa-volume-up text-xl';
+            }
+        }
+        
+        // Mute toggle button click
+        if (muteToggle) {
+            muteToggle.addEventListener('click', function() {
+                heroVideo.muted = !heroVideo.muted;
+                userMuted = heroVideo.muted;
+                updateMuteIcon();
+            });
+        }
+        
+        // Auto-mute on scroll
+        if (heroVideo && heroSection) {
+            window.addEventListener('scroll', function() {
+                const heroSectionBottom = heroSection.offsetTop + heroSection.offsetHeight;
+                const scrollPosition = window.pageYOffset + 100; // Add small buffer
+                
+                if (scrollPosition > heroSectionBottom) {
+                    heroVideo.muted = true;
+                    updateMuteIcon();
+                } else {
+                    // Restore to user's preference when scrolling back
+                    heroVideo.muted = userMuted;
+                    updateMuteIcon();
+                }
+            });
+        }
+        
+        // Initialize icon state
+        updateMuteIcon();
+    </script>
+</body>
+</html>

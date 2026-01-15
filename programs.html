@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programs | ILM Academy | Education Excellence</title>
+    <title>Programs | ILM Academy | British, American & IB Curriculum</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="ilm logo.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="ilm logo.jpg">
+    <link rel="apple-touch-icon" href="ilm logo.jpg">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore ILM Academy's comprehensive programs: Early Years, Primary, Middle School, and High School. Offering British, American, and IB curriculum in Nairobi.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content=" Programs | ILM Academy">
+    <meta property="og:description" content="Comprehensive educational programs from Early Years to High School with British, American, and IB curriculum.">
+    <meta property="og:image" content="https://www.ilmacademy.net/ilm logo.jpg">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -108,6 +122,56 @@
         .testimonial-card {
             background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
         }
+
+         .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-radius: 0.5rem;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 50;
+            margin-top: 0.5rem;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-item {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #111827;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .dropdown-item:hover {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left-color: #3b82f6;
+            color: #2563eb;
+        }
+        
+        .dropdown-item:first-child {
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+        }
+        
+        .dropdown-item:last-child {
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+        }
     </style>
 </head>
 <body class="font-sans bg-gray-50">
@@ -117,7 +181,7 @@
             <div class="flex justify-between h-20 items-center">
                 <div class="flex-shrink-0 flex items-center animate-slide-left">
                     <a href="index.html" class="flex items-center">
-                        <img src="ilm logo.jpg" alt="ILM Academy Logo" class="h-10 mr-2">
+                        <img src="ilm logo.jpg" alt="ILM Academy Logo" class="h-20 mr-2">
                         <span class="text-xl font-bold text-gray-900">ILM Academy</span>
                     </a>
                 </div>
@@ -125,7 +189,18 @@
                     <div class="ml-10 flex items-center space-x-8">
                         <a href="index.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
                         <a href="about.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">About</a>
-                        <a href="programs.html" class="text-blue-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Programs</a>
+                        <div class="dropdown">
+                            <a href="programs.html" class="text-blue-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300 flex items-center">
+                                Programs
+                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="programs.html" class="dropdown-item">All Programs</a>
+                                <a href="britishsystem.html" class="dropdown-item">British Curriculum</a>
+                                <a href="american-curriculum.html" class="dropdown-item">American Curriculum</a>
+                                <a href="ib-programme.html" class="dropdown-item">IB Programme</a>
+                            </div>
+                        </div>
                         <a href="facilities.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Facilities</a>
                         <a href="admissions.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Admissions</a>
                         <a href="contact.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
@@ -145,7 +220,10 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Home</a>
                 <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">About</a>
-                <a href="programs.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 hover:bg-gray-50">Programs</a>
+                <a href="programs.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Programs</a>
+                <a href="britishsystem.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50 pl-6">British Curriculum</a>
+                <a href="american-curriculum.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50 pl-6">American Curriculum</a>
+                <a href="ib-programme.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50 pl-6">IB Programme</a>
                 <a href="facilities.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Facilities</a>
                 <a href="admissions.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Admissions</a>
                 <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Contact</a>
@@ -158,7 +236,7 @@
     <section class="relative overflow-hidden">
         <div class="parallax relative py-32 flex items-center justify-center h-[600px]">
             <!-- Background Image -->
-            <img src="DSC_1023.jpg" alt="Educational Programs Background"
+            <img src="NEWPROG.jpg" alt="Educational Programs Background"
                 class="absolute inset-0 w-full h-full object-cover z-0">
     
             <!-- Overlay -->
@@ -188,13 +266,14 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">Holistic <span class="gradient-text">Approach</span></h2>
                 <div class="w-24 h-1 bg-orange-500 mx-auto mb-6 animate-fade-in delay-100"></div>
-                <p class="text-xl text-gray-600 .. mx-auto animate-fade-in delay-200">At ILM Academy, we offer both the American and British curriculum, our belief that education should empower students — not only to succeed academically. Our student-centered approach emphasizes critical thinking, creativity, and collaboration, while a wide range of subjects and electives allows learners to explore their passions.
-                    With advanced coursework, digital integration, and personalized support, we equip students for success in top universities and careers worldwide. Beyond academics, we foster leadership, service, and a strong moral foundation — helping students grow into thoughtful, confident global citizens.
-                    </p>
-                    <p class="text-xl text-gray-600 .. mx-auto animate-fade-in delay-200">With advanced coursework, digital integration, and personalized support, we equip students for
-                        success in top universities and careers worldwide. Beyond academics, we foster leadership,
-                        service, and a strong moral foundation — helping students grow into thoughtful, confident global
-                        citizens.</p>
+                <p class="text-xl text-gray-600 .. mx-auto animate-fade-in delay-200">
+                    At ILM Academy, we understand that every student is unique, with distinct learning styles, aspirations, and cultural backgrounds. To cater to this diversity and ensure a truly global education, we proudly offer a comprehensive range of internationally recognized curricula: American Curriculum, and British Curriculum. 
+                    ILM Academy is a Candidate School* for the IB DP Programme (Grades 11 & 12).  This school is pursuing authorization as an IB World School. These are schools that share a common philosophy—a 
+                    commitment to high quality, challenging, international education that ILM Academy believes is important for our students.
+                </p>
+                <p class="text-xl text-gray-600 .. mx-auto animate-fade-in delay-200">
+                    Each pathway is meticulously designed to provide a rigorous, engaging, and holistic educational experience, fostering critical thinking, creativity, and a deep sense of responsibility.
+                    Whether your child thrives in an inquiry-based, interdisciplinary environment, benefits from a broad and flexible American approach, or excels within the structured academic rigor of the British system.</p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
@@ -238,7 +317,7 @@
             <div class="program-card bg-white rounded-xl overflow-hidden mb-12 animate-fade-in">
                 <div class="md:flex">
                     <div class="md:w-1/2 relative">
-                        <img src="BABY ILM.jpg" alt="Preschool Program" class="w-full h-full object-cover">
+                        <img src="NEWPRIM.jpg" alt="Preschool Program" class="w-full h-full object-cover">
                         <div class="image-overlay"></div>
                         <div class="absolute bottom-0 left-0 p-8 text-white z-10">
                             <h3 class="text-3xl font-bold mb-2">Early years/ Primary</h3>
@@ -293,7 +372,7 @@
             <div class="program-card bg-white rounded-xl overflow-hidden mb-12 animate-fade-in delay-100">
                 <div class="md:flex flex-row-reverse">
                     <div class="md:w-1/2 relative">
-                        <img src="MID ILM.jpg" alt="Elementary Program" class="w-full h-full object-cover">
+                        <img src="NEWMID.jpg" alt="Elementary Program" class="w-full h-full object-cover">
                         <div class="image-overlay"></div>
                         <div class="absolute bottom-0 left-0 p-8 text-white z-10">
                             <h3 class="text-3xl font-bold mb-2">Middle School</h3>
@@ -348,7 +427,7 @@
             <div class="program-card bg-white rounded-xl overflow-hidden mb-12 animate-fade-in delay-200">
                 <div class="md:flex">
                     <div class="md:w-1/2 relative">
-                        <img src="HIGHSCHOOL ILM.jpg" alt="Middle School Program" class="w-full h-full object-cover">
+                        <img src="NEWHS.jpg" alt="Middle School Program" class="w-full h-full object-cover">
                         <div class="image-overlay"></div>
                         <div class="absolute bottom-0 left-0 p-8 text-white z-10">
                             <h3 class="text-3xl font-bold mb-2">High School</h3>
@@ -403,7 +482,7 @@
     </section>
 
     <!-- Special Programs Section -->
-    <section class="py-20 bg-white">
+    <!-- <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">Special <span class="gradient-text">Programs</span></h2>
@@ -412,12 +491,8 @@
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Hifz Program -->
                 
-                <!-- Arabic Program -->
-                
-                
-                <!-- STEM Program -->
+
                 <div class="bg-gray-50 rounded-xl overflow-hidden hover-scale transition duration-300 animate-fade-in delay-200">
                     <div class="h-48 relative">
                         <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="STEM Program" class="w-full h-full object-cover">
@@ -429,13 +504,12 @@
                     <div class="p-6">
                         <p class="text-gray-600 mb-4">Our innovative STEM program integrates science, technology, engineering, and mathematics featuring robotics, coding, and engineering projects.</p>
                         <div class="flex items-center text-indigo-600 font-medium">
-                            <!--<span>Learn More</span>
-                            <i class="fas fa-arrow-right ml-2"></i>-->
+                            
                         </div>
                     </div>
                 </div>
                 
-                <!-- Weekend School -->
+                
                 <div class="bg-gray-50 rounded-xl overflow-hidden hover-scale transition duration-300 animate-fade-in">
                     <div class="h-48 relative">
                         <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Weekend School" class="w-full h-full object-cover">
@@ -447,13 +521,12 @@
                     <div class="p-6">
                         <p class="text-gray-600 mb-4">For students attending other schools, our weekend program offers Coding, Science, and Information Technology instruction in a structured environment.</p>
                         <div class="flex items-center text-indigo-600 font-medium">
-                            <!--<span>Learn More</span>
-                            <i class="fas fa-arrow-right ml-2"></i>-->
+                            
                         </div>
                     </div>
                 </div>
                 
-                <!-- Summer Program -->
+                
                 <div class="bg-gray-50 rounded-xl overflow-hidden hover-scale transition duration-300 animate-fade-in delay-100">
                     <div class="h-48 relative">
                         <img src="IMG-20250217-WA0094.jpg" alt="Summer Program" class="w-full h-full object-cover">
@@ -465,13 +538,12 @@
                     <div class="p-6">
                         <p class="text-gray-600 mb-4">Our summer programs combine fun activities, field trips, and academic enrichment to keep students engaged during the break.</p>
                         <div class="flex items-center text-indigo-600 font-medium">
-                            <!--<span>Learn More</span>
-                            <i class="fas fa-arrow-right ml-2"></i>-->
+                            
                         </div>
                     </div>
                 </div>
                 
-                <!-- Leadership Program -->
+
                 <div class="bg-gray-50 rounded-xl overflow-hidden hover-scale transition duration-300 animate-fade-in delay-200">
                     <div class="h-48 relative">
                         <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Leadership Program" class="w-full h-full object-cover">
@@ -483,17 +555,16 @@
                     <div class="p-6">
                         <p class="text-gray-600 mb-4">Developing the next generation of leaders through workshops, community service projects, and mentorship opportunities.</p>
                         <div class="flex items-center text-indigo-600 font-medium">
-                            <!--<span>Learn More</span>
-                            <i class="fas fa-arrow-right ml-2"></i>-->
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Testimonials Section -->
-    <section class="py-20 bg-orange-50">
+    <!-- <section class="py-20 bg-orange-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">What <span class="gradient-text">Parents Say</span></h2>
@@ -502,7 +573,8 @@
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
+                
+
                 <div class="testimonial-card p-8 rounded-xl animate-fade-in">
                     <div class="flex items-center mb-6">
                         <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Parent" class="h-16 w-16 rounded-full object-cover mr-4">
@@ -521,7 +593,7 @@
                     </div>
                 </div>
                 
-                <!-- Testimonial 2 -->
+                
                 <div class="testimonial-card p-8 rounded-xl animate-fade-in delay-100">
                     <div class="flex items-center mb-6">
                         <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Parent" class="h-16 w-16 rounded-full object-cover mr-4">
@@ -540,7 +612,7 @@
                     </div>
                 </div>
                 
-                <!-- Testimonial 3 -->
+                
                 <div class="testimonial-card p-8 rounded-xl animate-fade-in delay-200">
                     <div class="flex items-center mb-6">
                         <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Parent" class="h-16 w-16 rounded-full object-cover mr-4">
@@ -560,7 +632,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- CTA Section -->
     <section class="py-20 bg-blue-600 text-white">
@@ -569,7 +641,7 @@
             <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto animate-fade-in delay-100">Discover how our unique approach to education can benefit your child's academic and spiritual growth.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in delay-200">
                 <a href="contact.html" class="bg-white text-indigo-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold text-lg transition duration-300 hover-scale">Schedule a Visit</a>
-                <a href="#" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-indigo-600 px-8 py-3 rounded-lg font-semibold text-lg transition duration-300 hover-scale">Download Brochure</a>
+                <!-- <a href="#" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-indigo-600 px-8 py-3 rounded-lg font-semibold text-lg transition duration-300 hover-scale">Download Brochure</a> -->
             </div>
         </div>
     </section>
@@ -582,7 +654,7 @@
                     <div class="flex items-center mb-4">
                         <!-- Add a dark background container for the logo -->
                         <div class="bg-gray-900 p-1 rounded mr-2">
-                            <img src="ilm logo.jpg" alt="ILM Academy Logo" class="h-10">
+                            <img src="ilm logo.jpg" alt="ILM Academy Logo" class="h-20">
                         </div>
                         <span class="text-xl font-bold">ILM Academy</span>
                     </div>
@@ -609,10 +681,9 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Programs</h3>
                     <ul class="space-y-2">
-                        <li class="text-gray-400 hover:text-white transition duration-300">Get in touch</li>
-                        <p class = "text-gray-400 hover:text-white transition duration-300"><span>TELEPHONE: 07077 96867</span></p>
-                        <li class="text-gray-400 hover:text-white transition duration-300">General Email:</li>
-                        <li class="text-gray-400 hover:text-white transition duration-300"><a href="mailto:info@ilmacademy.net">info@ilmacademy.net</a></li>
+                        <li><a href="britishsystem.html" class="text-gray-400 hover:text-white transition duration-300">British System</a></li>
+                        <li><a href="american-curriculum.html" class="text-gray-400 hover:text-white transition duration-300">American Curriculum</a></li>
+                        <li><a href="ib-programme.html" class="text-gray-400 hover:text-white transition duration-300">IB Programme</a></li>
                     </ul>
                 </div>
                 
@@ -655,6 +726,11 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- WhatsApp Floating Button -->
+    <a id="whatsapp-button" href="https://wa.me/254707796867" target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
     <script>
         // Mobile menu toggle
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
@@ -662,16 +738,21 @@
             menu.classList.toggle('hidden');
         });
 
-        // Back to top button
+        // Back to top button and WhatsApp button scroll behavior
         const backToTopButton = document.getElementById('back-to-top');
+        const whatsappButton = document.getElementById('whatsapp-button');
         
         window.addEventListener('scroll', function() {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.remove('opacity-0', 'invisible');
                 backToTopButton.classList.add('opacity-100', 'visible');
+                // Move WhatsApp button above the Back to Top button
+                whatsappButton.style.bottom = '5rem'; // 80px (5rem = bottom-20)
             } else {
                 backToTopButton.classList.remove('opacity-100', 'visible');
                 backToTopButton.classList.add('opacity-0', 'invisible');
+                // Reset WhatsApp button to original position
+                whatsappButton.style.bottom = '2rem'; // 32px (2rem = bottom-8)
             }
         });
         

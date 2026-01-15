@@ -3,7 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About ILM Academy | Excellence in Islamic Education</title>
+    <title>About ILM Academy | Excellence in Education | Nairobi, Kenya</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="ilm logo.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="ilm logo.jpg">
+    <link rel="apple-touch-icon" href="ilm logo.jpg">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Learn about ILM Academy, a private international school in Nairobi offering British, American, and IB curriculum. Discover our mission, vision, and core values.">
+    <meta name="keywords" content="ILM Academy About, school mission, school vision, Nairobi international school, educational values">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ilmacademy.net/about.html">
+    <meta property="og:title" content="About ILM Academy | Excellence in Education">
+    <meta property="og:description" content="Discover ILM Academy's mission, vision, and core values. We empower students to become compassionate global citizens.">
+    <meta property="og:image" content="https://www.ilmacademy.net/ilm logo.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.ilmacademy.net/about.html">
+    <meta name="twitter:title" content="About ILM Academy | Excellence in Education">
+    <meta name="twitter:description" content="Discover ILM Academy's mission, vision, and core values.">
+    <meta name="twitter:image" content="https://www.ilmacademy.net/ilm logo.jpg">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -95,6 +119,56 @@
             width: 2px;
             background: #e5e7eb;
         }
+
+         .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-radius: 0.5rem;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 50;
+            margin-top: 0.5rem;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-item {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #111827;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .dropdown-item:hover {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left-color: #3b82f6;
+            color: #2563eb;
+        }
+        
+        .dropdown-item:first-child {
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+        }
+        
+        .dropdown-item:last-child {
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+        }
     </style>
 </head>
 <body class="font-sans bg-gray-50">
@@ -104,7 +178,7 @@
             <div class="flex justify-between h-20 items-center">
                 <div class="flex-shrink-0 flex items-center animate-slide-left">
                     <a href="index.html" class="flex items-center">
-                        <img src="ilm logo.jpg" alt="ILM Academy Logo" class="h-10 mr-2">
+                        <img src="ilm logo.jpg" alt="ILM Academy Logo" class="h-20 mr-2">
                         <span class="text-xl font-bold text-gray-900">ILM Academy</span>
                     </a>
                 </div>
@@ -112,7 +186,18 @@
                     <div class="ml-10 flex items-center space-x-8">
                         <a href="index.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
                         <a href="about.html" class="text-blue-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">About</a>
-                        <a href="programs.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Programs</a>
+                        <div class="dropdown">
+                            <a href="programs.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300 flex items-center">
+                                Programs
+                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="programs.html" class="dropdown-item">All Programs</a>
+                                <a href="britishsystem.html" class="dropdown-item">British Curriculum</a>
+                                <a href="american-curriculum.html" class="dropdown-item">American Curriculum</a>
+                                <a href="ib-programme.html" class="dropdown-item">IB Programme</a>
+                            </div>
+                        </div>
                         <a href="facilities.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Facilities</a>
                         <a href="admissions.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Admissions</a>
                         <a href="contact.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
@@ -131,9 +216,13 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Home</a>
-                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 hover:bg-gray-50">About</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">About</a>
                 <a href="programs.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Programs</a>
+                <a href="britishsystem.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50 pl-6">British Curriculum</a>
+                <a href="american-curriculum.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50 pl-6">American Curriculum</a>
+                <a href="ib-programme.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50 pl-6">IB Programme</a>
                 <a href="facilities.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Facilities</a>
+                <a href="admissions.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Admissions</a>
                 <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Contact</a>
                 <a href="privacy.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Privacy Policy</a>
             </div>
@@ -153,14 +242,14 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
                 <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in">About <span class="gradient-text">ILM Academy</span></h1>
                 <p class="text-xl text-gray-200 mb-8 max-w-3xl mx-auto animate-fade-in delay-100">Empowering Future Leaders with Knowledge, Character, and Purpose.</p>
-                <div class="animate-fade-in delay-200 flex flex-wrap gap-4 justify-center">
+                <!-- <div class="animate-fade-in delay-200 flex flex-wrap gap-4 justify-center">
                     <a href="admissions.html" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 md:py-4 md:text-lg md:px-10 transition duration-300">
                         Apply Now <i class="fas fa-chevron-right ml-2"></i>
                     </a>
                     <a href="contact.html" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 md:py-4 md:text-lg md:px-10 transition duration-300">
                         Book a Tour <i class="fas fa-chevron-right ml-2"></i>
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -178,7 +267,10 @@
                         <!-- Our Mission -->
                         <h3 class="text-3xl font-semibold text-gray-900 mb-6">Our Mission</h3>
                         <p class="text-gray-600 mb-6">
-                        To nurture compassionate, confident, and community-minded learners prepared to succeed in a diverse and dynamic world.
+                        Our mission is to cultivate learners who, through ethical engagement and intercultural understanding, 
+                        contribute to a peaceful and sustainable world, embracing local and global responsibilities with compassion and integrity.
+
+
                         </p>
                     
                         <!-- Our Motto (now styled like Our Mission) -->
@@ -194,7 +286,8 @@
                 </div>
                 <div class="animate-slide-right delay-100">
                     <h3 class="text-3xl font-semibold text-gray-900 mb-6">Our Vision</h3>
-                    <p class="text-gray-600 mb-6">To be a leading educational institution that produces well-rounded individuals who are:</p>
+                    <p class="text-gray-600 mb-6">Our vision is to be a learning community that empowers students to become compassionate global citizens who 
+                    advance intercultural understanding, promote peace, act sustainably, and contribute positively to an interconnected world.</p>
                     
                     <div class="space-y-4">
                         <div class="flex items-start">
@@ -252,11 +345,18 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">Our <span class="gradient-text">Core Values</span></h2>
                 <div class="w-24 h-1 bg-orange-500 mx-auto mb-6 animate-fade-in delay-100"></div>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in delay-200">The foundational principles that guide everything we do at ILM Academy</p>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in delay-200">At ILM Academy, we encourage our students to work within a framework of ethics that we adhere to in order to nurture them.
+
+The ILM Academy core values are built around four pillars namely:-
+
+Community,
+Character,
+Culture
+Excellence.</p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Value 1 -->
+            <!-- <div class="grid md:grid-cols-3 gap-8">
+                
                 <div class="bg-white p-8 rounded-xl shadow-md hover-scale transition duration-300 animate-fade-in">
                     <div class="h-16 w-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-2xl mb-6">
                         <i class="fas fa-quran"></i>
@@ -265,7 +365,7 @@
                     <p class="text-gray-600"> We guide the students spiritually in order for them to get a better view of things in life.</p>
                 </div>
                 
-                <!-- Value 2 -->
+                
                 <div class="bg-white p-8 rounded-xl shadow-md hover-scale transition duration-300 animate-fade-in delay-100">
                     <div class="h-16 w-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-2xl mb-6">
                         <i class="fas fa-user-graduate"></i>
@@ -274,7 +374,7 @@
                     <p class="text-gray-600">We maintain high academic standards while integrating good moral values into all subject areas.</p>
                 </div>
                 
-                <!-- Value 3 -->
+                
                 <div class="bg-white p-8 rounded-xl shadow-md hover-scale transition duration-300 animate-fade-in delay-200">
                     <div class="h-16 w-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-2xl mb-6">
                         <i class="fas fa-hands-helping"></i>
@@ -283,7 +383,7 @@
                     <p class="text-gray-600">We nurture moral character, integrity, and ethical behavior.</p>
                 </div>
                 
-                <!-- Value 4 -->
+                
                 <div class="bg-white p-8 rounded-xl shadow-md hover-scale transition duration-300 animate-fade-in">
                     <div class="h-16 w-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-2xl mb-6">
                         <i class="fas fa-users"></i>
@@ -292,7 +392,7 @@
                     <p class="text-gray-600">We foster strong connections between students, families, and the teachers.</p>
                 </div>
                 
-                <!-- Value 5 -->
+                
                 <div class="bg-white p-8 rounded-xl shadow-md hover-scale transition duration-300 animate-fade-in delay-100">
                     <div class="h-16 w-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-2xl mb-6">
                         <i class="fas fa-heart"></i>
@@ -301,7 +401,7 @@
                     <p class="text-gray-600">We provide a nurturing, inclusive environment where every student feels valued and supported.</p>
                 </div>
                 
-                <!-- Value 6 -->
+                
                 <div class="bg-white p-8 rounded-xl shadow-md hover-scale transition duration-300 animate-fade-in delay-200">
                     <div class="h-16 w-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-2xl mb-6">
                         <i class="fas fa-lightbulb"></i>
@@ -309,13 +409,13 @@
                     <h3 class="text-2xl font-semibold text-gray-900 mb-4">Lifelong Learning</h3>
                     <p class="text-gray-600">We instill a love for learning that extends beyond the classroom and throughout life.</p>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 <!-- History section -->
 
     <!-- Leadership Section -->
-    <section class="py-20 bg-orange-50">
+    <!-- <section class="py-20 bg-orange-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">Meet Our <span class="gradient-text">Leadership</span></h2>
@@ -324,7 +424,8 @@
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Leader 1 -->
+                
+
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-scale transition duration-300 animate-fade-in">
                     <div class="h-64 bg-indigo-100 flex items-center justify-center relative overflow-hidden">
                         <div class="absolute inset-0 bg-gradient-to-t from-black opacity-30"></div>
@@ -341,7 +442,7 @@
                     </div>
                 </div>
                 
-                <!-- Leader 2 -->
+                
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-scale transition duration-300 animate-fade-in delay-100">
                     <div class="h-64 bg-indigo-100 flex items-center justify-center relative overflow-hidden">
                         <div class="absolute inset-0 bg-gradient-to-t from-black opacity-30"></div>
@@ -358,7 +459,7 @@
                     </div>
                 </div>
                 
-                <!-- Leader 3 -->
+                
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-scale transition duration-300 animate-fade-in delay-200">
                     <div class="h-64 bg-indigo-100 flex items-center justify-center relative overflow-hidden">
                         <div class="absolute inset-0 bg-gradient-to-t from-black opacity-30"></div>
@@ -376,7 +477,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- CTA Section -->
     <section class="py-20 bg-blue-600 text-white">
@@ -398,7 +499,7 @@
                     <div class="flex items-center mb-4">
                         <!-- Add a dark background container for the logo -->
                         <div class="bg-gray-900 p-1 rounded mr-2">
-                            <img src="ilm logo.jpg" alt="ILM Academy Logo" class="h-10">
+                            <img src="ilm logo.jpg" alt="ILM Academy Logo" class="h-20">
                         </div>
                         <span class="text-xl font-bold">ILM Academy</span>
                     </div>
@@ -420,10 +521,9 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Programs</h3>
                     <ul class="space-y-2">
-                        <li class="text-gray-400 hover:text-white transition duration-300">Get in touch</li>
-                        <p class = "text-gray-400 hover:text-white transition duration-300"><span>TELEPHONE: 07077 96867</span></p>
-                        <li class="text-gray-400 hover:text-white transition duration-300">General Email:</li>
-                        <li class="text-gray-400 hover:text-white transition duration-300"><a href="mailto:info@ilmacademy.net">info@ilmacademy.net</a></li>
+                        <li><a href="britishsystem.html" class="text-gray-400 hover:text-white transition duration-300">British System</a></li>
+                        <li><a href="american-curriculum.html" class="text-gray-400 hover:text-white transition duration-300">American Curriculum</a></li>
+                        <li><a href="ib-programme.html" class="text-gray-400 hover:text-white transition duration-300">IB Programme</a></li>
                     </ul>
                 </div>
                 
@@ -466,6 +566,11 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- WhatsApp Floating Button -->
+    <a id="whatsapp-button" href="https://wa.me/254707796867" target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
     <script>
         // Mobile menu toggle
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
@@ -473,16 +578,21 @@
             menu.classList.toggle('hidden');
         });
 
-        // Back to top button
+        // Back to top button and WhatsApp button scroll behavior
         const backToTopButton = document.getElementById('back-to-top');
+        const whatsappButton = document.getElementById('whatsapp-button');
         
         window.addEventListener('scroll', function() {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.remove('opacity-0', 'invisible');
                 backToTopButton.classList.add('opacity-100', 'visible');
+                // Move WhatsApp button above the Back to Top button
+                whatsappButton.style.bottom = '5rem'; // 80px (5rem = bottom-20)
             } else {
                 backToTopButton.classList.remove('opacity-100', 'visible');
                 backToTopButton.classList.add('opacity-0', 'invisible');
+                // Reset WhatsApp button to original position
+                whatsappButton.style.bottom = '2rem'; // 32px (2rem = bottom-8)
             }
         });
         

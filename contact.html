@@ -4,6 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ILM Academy | Contact Us</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="ilm logo.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="ilm logo.jpg">
+    <link rel="apple-touch-icon" href="ilm logo.jpg">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="ILM Academy is a private school in Nairobi, Kenya offering U.S., UK-based, and IB curriculum. Nurturing academic excellence with spiritual values to develop the leaders of tomorrow.">
+    <meta name="keywords" content="ILM Academy, Nairobi school, international school Kenya, British curriculum, American curriculum, IB programme, private school Nairobi, Islamic school, education excellence">
+    <meta name="author" content="ILM Academy">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ilmacademy.net/">
+    <meta property="og:title" content="ILM Academy | Education Excellence | Nairobi, Kenya">
+    <meta property="og:description" content="ILM Academy offers U.S., UK-based, and IB curriculum in Nairobi, Kenya. Nurturing academic excellence with spiritual values to develop the leaders of tomorrow.">
+    <meta property="og:image" content="https://www.ilmacademy.net/ilm logo.jpg">
+    <meta property="og:site_name" content="ILM Academy">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.ilmacademy.net/">
+    <meta name="twitter:title" content="ILM Academy | Education Excellence | Nairobi, Kenya">
+    <meta name="twitter:description" content="ILM Academy offers U.S., UK-based, and IB curriculum in Nairobi, Kenya. Nurturing academic excellence with spiritual values.">
+    <meta name="twitter:image" content="https://www.ilmacademy.net/ilm logo.jpg">
+    <meta name="twitter:site" content="@ILMAcademy_Nrb">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -126,6 +154,56 @@
         .department-card {
             background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
         }
+
+         .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-radius: 0.5rem;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 50;
+            margin-top: 0.5rem;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-item {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #111827;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .dropdown-item:hover {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left-color: #3b82f6;
+            color: #2563eb;
+        }
+        
+        .dropdown-item:first-child {
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+        }
+        
+        .dropdown-item:last-child {
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+        }
     </style>
 </head>
 <body class="font-sans bg-gray-50">
@@ -135,7 +213,7 @@
             <div class="flex justify-between h-20 items-center">
                 <div class="flex-shrink-0 flex items-center animate-slide-left">
                     <a href="index.html" class="flex items-center">
-                        <img src="ilm logo.jpg" alt="ILM Academy Logo" class="h-10 mr-2">
+                        <img src="ilm logo.jpg" alt="ILM Academy Logo" class="h-20 mr-2">
                         <span class="text-xl font-bold text-gray-900">ILM Academy</span>
                     </a>
                 </div>
@@ -143,10 +221,21 @@
                     <div class="ml-10 flex items-center space-x-8">
                         <a href="index.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
                         <a href="about.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">About</a>
-                        <a href="programs.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Programs</a>
+                        <div class="dropdown">
+                            <a href="programs.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300 flex items-center">
+                                Programs
+                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="programs.html" class="dropdown-item">All Programs</a>
+                                <a href="britishsystem.html" class="dropdown-item">British Curriculum</a>
+                                <a href="american-curriculum.html" class="dropdown-item">American Curriculum</a>
+                                <a href="ib-programme.html" class="dropdown-item">IB Programme</a>
+                            </div>
+                        </div>
                         <a href="facilities.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Facilities</a>
                         <a href="admissions.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Admissions</a>
-                        <a href="contact.html" class="text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
+                        <a href="contact.html" class="text-blue-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
                         <a href="privacy.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Privacy Policy</a>
                     </div>
                 </div>
@@ -164,9 +253,12 @@
                 <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Home</a>
                 <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">About</a>
                 <a href="programs.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Programs</a>
+                <a href="britishsystem.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50 pl-6">British Curriculum</a>
+                <a href="american-curriculum.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50 pl-6">American Curriculum</a>
+                <a href="ib-programme.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50 pl-6">IB Programme</a>
                 <a href="facilities.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Facilities</a>
                 <a href="admissions.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Admissions</a>
-                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 hover:bg-gray-50">Contact</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Contact</a>
                 <a href="privacy.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Privacy Policy</a>
             </div>
         </div>
@@ -179,12 +271,12 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                 <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in">Contact <span class="gradient-text">Us</span></h1>
                 <p class="text-xl text-gray-200 mb-8 max-w-3xl mx-auto animate-fade-in delay-100">We'd love to hear from you! Reach out with any questions or to schedule a visit.</p>
-                <div class="animate-fade-in delay-200">
+                <!-- <div class="animate-fade-in delay-200">
                     <a href="#contact-form" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 md:py-4 md:text-lg md:px-10 transition duration-300">
                         Send a Message
                         <i class="fas fa-envelope ml-2"></i>
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -204,7 +296,7 @@
                         <i class="fas fa-map-marker-alt text-cyan-600 text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-center mb-3">Our Location</h3>
-                    <p class="text-gray-600 text-center mb-4">PQ78+X8G, Jacaranda Ave<br>Nairobi</p>
+                    <p class="text-gray-600 text-center mb-4">Jacaranda Ave<br>Nairobi</p>
                     <div class="text-center">
                         <a href="#map" class="text-blue-600 font-medium inline-flex items-center">
                             View on Map
@@ -218,10 +310,9 @@
                         <i class="fas fa-phone-alt text-cyan-600 text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-center mb-3">Call Us</h3>
-                    <p class="text-gray-600 text-center mb-4">Main Office: 07077 96867<br>
-                    Admissions: 07077 96867</p>
+                    <p class="text-gray-600 text-center mb-4">Main Office: 0707796867</p>
                     <div class="text-center">
-                        <a href="tel:+11234567890" class="text-blue-600 font-medium inline-flex items-center">
+                        <a href="tel:+254707796867" class="text-blue-600 font-medium inline-flex items-center">
                             Call Now
                             <i class="fas fa-phone ml-2"></i>
                         </a>
@@ -233,10 +324,9 @@
                         <i class="fas fa-envelope text-cyan-600 text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-center mb-3">Email Us</h3>
-                    <p class="text-gray-600 text-center mb-4">General: info@ilmacademy.net<br>
-                    Admissions: info@ilmacademy.net</p>
+                    <p class="text-gray-600 text-center mb-4">General: info@ilmacademy.net</p>
                     <div class="text-center">
-                        <a href="mailto:info@ilmacademy.edu" class="text-blue-600 font-medium inline-flex items-center">
+                        <a href="mailto:info@ilmacademy.net" class="text-blue-600 font-medium inline-flex items-center">
                             Email Now
                             <i class="fas fa-paper-plane ml-2"></i>
                         </a>
@@ -249,8 +339,8 @@
     <!-- School Hours Section -->
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="animate-slide-left">
+            <div class="max-w-2xl mx-auto">
+                <div class="animate-fade-in text-center">
                     <h2 class="text-3xl font-bold text-gray-900 mb-6">School <span class="gradient-text">Hours</span></h2>
                     
                     <div class="bg-white p-8 rounded-xl shadow-sm">
@@ -281,39 +371,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="animate-slide-right">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Office <span class="gradient-text">Departments</span></h2>
-                    
-                    <div class="space-y-4">
-                        <div class="department-card p-6 rounded-lg">
-                            <h3 class="font-semibold text-lg mb-2 flex items-center">
-                                <i class="fas fa-user-graduate text-blue-600 mr-3"></i>
-                                Admissions Office
-                            </h3>
-                            <p class="text-gray-600 mb-2">For all inquiries about enrollment, school tours, and application process.</p>
-                            <p class="text-blue-600">admissions@ilmacademy.edu | (123) 456-7891</p>
-                        </div>
-                        
-                        <div class="department-card p-6 rounded-lg">
-                            <h3 class="font-semibold text-lg mb-2 flex items-center">
-                                <i class="fas fa-book text-indigo-600 mr-3"></i>
-                                Academic Office
-                            </h3>
-                            <p class="text-gray-600 mb-2">For curriculum questions, academic records, and teacher communications.</p>
-                            <p class="text-blue-600">academics@ilmacademy.edu | (123) 456-7892</p>
-                        </div>
-                        
-                        <!--<div class="department-card p-6 rounded-lg">
-                            <h3 class="font-semibold text-lg mb-2 flex items-center">
-                                <i class="fas fa-dollar-sign text-blue-600 mr-3"></i>
-                                Finance Office
-                            </h3>
-                            <p class="text-gray-600 mb-2">For tuition payments, financial aid, and billing questions.</p>
-                            <p class="text-blue-600">finance@ilmacademy.edu | (123) 456-7893</p>
-                        </div>-->
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -328,7 +385,7 @@
             </div>
             
             <div class="map-container rounded-xl overflow-hidden shadow-xl animate-fade-in">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.847441543627!2d36.8134153!3d-1.2629805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1a6f74939f1d%3A0x9f7dde1a6e8a0f1e!2sILM%20Academy!5e0!3m2!1sen!2ske!4v1623838287183!5m2!1sen!2ske" class="map-iframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7287347394445!2d36.76364!3d-1.2850656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1b29ac3f7a9d%3A0x8240e2ba8559429e!2sILM%20Academy!5e0!3m2!1sen!2ske!4v1705229355000!5m2!1sen!2ske" class="map-iframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
     
             
@@ -361,7 +418,7 @@
     </section>
 
     <!-- Contact Form Section -->
-    <section id="contact-form" class="py-20 bg-gray-50">
+    <!-- <section id="contact-form" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">Send Us a <span class="gradient-text">Message</span></h2>
@@ -407,13 +464,12 @@
                     
                     <div class="md:w-1/2 p-12">
                         <form id="contactForm" class="space-y-6" action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
-                            <!-- Required Web3Forms keys -->
+                            
                             <input type="hidden" name="access_key" value="22932d46-ad42-46f5-86aa-f358808208ba">
                             <input type="hidden" name="subject" value="New Contact Form Submission from ILM Academy">
-                            <!--<input type="hidden" name="redirect" value="https://yourwebsite.com/thank-you.html">-->
+                            
                             <input type="hidden" name="replyto" value="email">
-                            <!--<input type="hidden" name="message-format" value="html">-->
-    
+                            
                             <div>
                                 <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
                                 <input type="text" id="name" name="name" class="form-input w-full px-4 py-3 rounded-lg" required>
@@ -463,14 +519,14 @@
                                 </button>
                             </div>
     
-                            <!-- Feedback message container -->
+                            
                             <div id="form-status" class="hidden p-4 mb-4 text-sm rounded-lg text-center"></div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- FAQ Section -->
     <section class="py-20 bg-white">
@@ -565,7 +621,7 @@
                     <div class="flex items-center mb-4">
                         <!-- Add a dark background container for the logo -->
                         <div class="bg-gray-900 p-1 rounded mr-2">
-                            <img src="ilm logo.jpg" alt="ILM Academy Logo" class="h-10">
+                            <img src="ilm logo.jpg" alt="ILM Academy Logo" class="h-20">
                         </div>
                         <span class="text-xl font-bold">ILM Academy</span>
                     </div>
@@ -592,10 +648,9 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Programs</h3>
                     <ul class="space-y-2">
-                        <li class="text-gray-400 hover:text-white transition duration-300">Get in touch</li>
-                        <p class = "text-gray-400 hover:text-white transition duration-300"><span>TELEPHONE: 07077 96867</span></p>
-                        <li class="text-gray-400 hover:text-white transition duration-300">General Email:</li>
-                        <li class="text-gray-400 hover:text-white transition duration-300"><a href="mailto:info@ilmacademy.net">info@ilmacademy.net</a></li>
+                        <li><a href="britishsystem.html" class="text-gray-400 hover:text-white transition duration-300">British System</a></li>
+                        <li><a href="american-curriculum.html" class="text-gray-400 hover:text-white transition duration-300">American Curriculum</a></li>
+                        <li><a href="ib-programme.html" class="text-gray-400 hover:text-white transition duration-300">IB Programme</a></li>
                     </ul>
                 </div>
                 
@@ -604,11 +659,11 @@
                     <ul class="space-y-2 text-gray-400">
                         <li class="flex items-start">
                             <i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-400"></i>
-                            <span>PQ78+X8G, Jacaranda Ave, Nairobi</span>
+                            <span>Jacaranda Ave, Nairobi</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-phone-alt mt-1 mr-3 text-blue-400"></i>
-                            <span>07077 96867</span>
+                            <span>0707796867</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-envelope mt-1 mr-3 text-blue-400"></i>
@@ -643,6 +698,11 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- WhatsApp Floating Button -->
+    <a id="whatsapp-button" href="https://wa.me/254707796867" target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
     <script>
         // Mobile menu toggle
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
@@ -650,16 +710,21 @@
             menu.classList.toggle('hidden');
         });
 
-        // Back to top button
+        // Back to top button and WhatsApp button scroll behavior
         const backToTopButton = document.getElementById('back-to-top');
+        const whatsappButton = document.getElementById('whatsapp-button');
         
         window.addEventListener('scroll', function() {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.remove('opacity-0', 'invisible');
                 backToTopButton.classList.add('opacity-100', 'visible');
+                // Move WhatsApp button above the Back to Top button
+                whatsappButton.style.bottom = '5rem'; // 80px (5rem = bottom-20)
             } else {
                 backToTopButton.classList.remove('opacity-100', 'visible');
                 backToTopButton.classList.add('opacity-0', 'invisible');
+                // Reset WhatsApp button to original position
+                whatsappButton.style.bottom = '2rem'; // 32px (2rem = bottom-8)
             }
         });
         
